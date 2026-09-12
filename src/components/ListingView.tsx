@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import {
   Search,
-  Share2,
   Heart,
   Grid,
   Star,
@@ -13,7 +12,9 @@ import {
   Wifi,
   KeyRound,
   MapPin,
+  Bed,
   BedDouble,
+  Flag,
   ShowerHead,
   Tv,
   Waves,
@@ -174,6 +175,19 @@ export const ListingView: React.FC<ListingViewProps> = ({
     KeyRound: <KeyRound className="w-6 h-6 text-zinc-800" />,
     MapPin: <MapPin className="w-6 h-6 text-zinc-800" />,
   };
+
+  const bedrooms = [
+    {
+      id: 1,
+      title: 'Bedroom 1',
+      beds: '1 king bed',
+    },
+    {
+      id: 2,
+      title: 'Bedroom 2',
+      beds: '1 double bed',
+    },
+  ];
 
   const heroPhotos = listing.photos.slice(0, 5);
 
@@ -862,8 +876,38 @@ export const ListingView: React.FC<ListingViewProps> = ({
           </div>
         </div>
 
+        {/* 5. Where you'll sleep Section */}
+        <section id="where-youll-sleep" className="py-12 border-t border-zinc-200">
+          <h2 className="text-2xl font-semibold mb-6 text-zinc-900">
+            Where you&apos;ll sleep
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {bedrooms.map((room) => (
+              <div
+                key={room.id}
+                className="border border-gray-300 rounded-xl p-6 shadow-sm bg-white"
+              >
+                <Bed className="w-6 h-6 text-zinc-900 mb-4" />
+                <h3 className="font-semibold text-base text-zinc-900 mb-1">
+                  {room.title}
+                </h3>
+                <p className="text-sm text-zinc-600">{room.beds}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* 6. Top Rating Summary & Reviews Section */}
         <ReviewsSection />
+
+        {/* Report this listing */}
+        <button
+          type="button"
+          className="flex items-center gap-2 text-sm font-semibold underline cursor-pointer text-gray-800 hover:text-black my-8"
+        >
+          <Flag className="w-4 h-4" />
+          <span>Report this listing</span>
+        </button>
 
         {/* 7. Where you'll be & Neighbourhood Highlights Section */}
         <section id="location" className="py-12 border-t border-zinc-200 space-y-8">
