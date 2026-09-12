@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Romantic Jacuzzi 1BHK Candolim | Miraahya UG10 - Airbnb",
+  title: "Romantic Jacuzzi 1BHK Candolim | Mirashya UG10 - Airbnb",
   description:
-    "Condominium in Candolim, India. Unwind in your private heated outdoor jacuzzi with a 4.95-star rating, fast Wi-Fi, and prime coastal location.",
+    "Serviced apartment in Candolim, India. Unwind in your private heated outdoor jacuzzi with a 4.95-star rating, fast Wi-Fi, and prime coastal location.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

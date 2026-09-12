@@ -88,8 +88,8 @@ export const ReservationCard: React.FC<ReservationCardProps> = ({
                   </button>
                   <span className="text-sm font-semibold w-4 text-center">{guests}</span>
                   <button
-                    onClick={() => setGuests(Math.min(2, guests + 1))}
-                    disabled={guests >= 2}
+                    onClick={() => setGuests(Math.min(3, guests + 1))}
+                    disabled={guests >= 3}
                     className="w-8 h-8 rounded-full border border-zinc-300 flex items-center justify-center text-zinc-600 disabled:opacity-30 hover:border-zinc-800 transition-colors"
                   >
                     +
@@ -97,7 +97,7 @@ export const ReservationCard: React.FC<ReservationCardProps> = ({
                 </div>
               </div>
               <div className="text-[11px] text-zinc-500 pt-2 border-t border-zinc-100">
-                This property has a maximum capacity of 2 guests.
+                This property has a maximum capacity of 3 guests.
               </div>
             </div>
           )}

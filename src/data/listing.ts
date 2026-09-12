@@ -14,6 +14,12 @@ export interface ListingPhoto {
   category: PhotoCategory;
 }
 
+export interface CoHost {
+  name: string;
+  photo: string;
+  avatar?: string;
+}
+
 export interface HostInfo {
   name: string;
   avatar: string;
@@ -21,10 +27,12 @@ export interface HostInfo {
   yearsHosting: number;
   rating: number;
   reviewsCount: number;
+  reviewCount?: number;
   bio: string;
   responseRate: string;
   responseTime: string;
   badgeText: string;
+  coHosts?: CoHost[];
 }
 
 export interface ListingHighlight {
@@ -40,6 +48,11 @@ export interface PricingDetails {
   serviceFee: number;
   currency: string;
   currencySymbol: string;
+  displayPrice?: number;
+  mainDisplayPrice?: number | string;
+  displayPriceText?: string;
+  totalForStay?: number;
+  stayNights?: number;
   weeklyDiscountPercent?: number;
 }
 
@@ -57,19 +70,23 @@ export interface AmenityCategory {
 export interface ListingData {
   id: string;
   title: string;
+  subtitle?: string;
   location: string;
   city: string;
   state: string;
   country: string;
   rating: number;
   reviewCount: number;
+  reviewsCount?: number;
   isGuestFavorite: boolean;
   guestCapacity: number;
   bedroomCount: number;
   bedCount: number;
   bathroomCount: number;
+  capacity?: string;
   propertyType: string;
   host: HostInfo;
+  coHosts: CoHost[];
   highlights: ListingHighlight[];
   pricing: PricingDetails;
   photos: ListingPhoto[];
@@ -78,33 +95,122 @@ export interface ListingData {
 }
 
 export const listingData: ListingData = {
-  id: "listing-miraahya-ug10",
-  title: "Romantic Jacuzzi 1BHK Candolim | Miraahya UG10",
-  location: "Candolim, Goa, India",
+  id: "listing-mirashya-ug10",
+  title: "Romantic Jacuzzi 1BHK Candolim | Mirashya UG10",
+  subtitle: "Entire serviced apartment in Candolim, India",
+  location: "Candolim, India",
   city: "Candolim",
   state: "Goa",
   country: "India",
   rating: 4.95,
-  reviewCount: 48,
+  reviewCount: 19,
+  reviewsCount: 19,
   isGuestFavorite: true,
-  guestCapacity: 2,
+  guestCapacity: 3,
   bedroomCount: 1,
   bedCount: 1,
   bathroomCount: 1,
-  propertyType: "Entire condominium",
+  capacity: "3 guests · 1 bedroom · 1 bed · 1 bathroom",
+  propertyType: "Entire serviced apartment",
   
   host: {
-    name: "Miraahya Luxury Stays",
+    name: "Mirashya Homes",
     avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
     isSuperhost: true,
-    yearsHosting: 4,
-    rating: 4.98,
-    reviewsCount: 312,
+    yearsHosting: 2,
+    rating: 4.68,
+    reviewsCount: 1463,
+    reviewCount: 1463,
     badgeText: "Superhost",
-    bio: "Passionate hospitality designer dedicated to curating intimate, romantic escapes in the most picturesque corners of North Goa. We believe luxury is found in the smallest thoughtful touches.",
+    bio: "Mirashya Homes is dedicated to curating intimate, romantic escapes in the most picturesque corners of North Goa. We believe luxury is found in the smallest thoughtful touches.",
     responseRate: "100%",
     responseTime: "within an hour",
+    coHosts: [
+      {
+        name: "Sharath",
+        photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      },
+      {
+        name: "Aman Dev Pahwa",
+        photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+        avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      },
+      {
+        name: "Maria Karen Priyanka",
+        photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+        avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      },
+      {
+        name: "Simran",
+        photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+        avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      },
+      {
+        name: "Pallavi",
+        photo: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=400&q=80",
+        avatar: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=400&q=80",
+      },
+      {
+        name: "Sanyukta",
+        photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+        avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+      },
+      {
+        name: "Shruti",
+        photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      },
+      {
+        name: "Amisha",
+        photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+        avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+      },
+    ],
   },
+
+  coHosts: [
+    {
+      name: "Sharath",
+      photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Aman Dev Pahwa",
+      photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Maria Karen Priyanka",
+      photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+      avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Simran",
+      photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Pallavi",
+      photo: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=400&q=80",
+      avatar: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Sanyukta",
+      photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Shruti",
+      photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80",
+    },
+    {
+      name: "Amisha",
+      photo: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+      avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80",
+    },
+  ],
 
   highlights: [
     {
@@ -134,11 +240,16 @@ export const listingData: ListingData = {
   ],
 
   pricing: {
-    pricePerNight: 120,
-    cleaningFee: 30,
-    serviceFee: 20,
-    currency: "USD",
-    currencySymbol: "$",
+    pricePerNight: 5699,
+    cleaningFee: 0,
+    serviceFee: 0,
+    currency: "INR",
+    currencySymbol: "₹",
+    displayPrice: 28499,
+    mainDisplayPrice: 28499,
+    totalForStay: 28499,
+    stayNights: 5,
+    displayPriceText: "₹28,499 for 5 nights",
     weeklyDiscountPercent: 10,
   },
 
@@ -218,7 +329,7 @@ export const listingData: ListingData = {
   ],
 
   description:
-    "Welcome to Miraahya UG10, an exquisite boutique sanctuary nestled in the serene coastal haven of Candolim, North Goa. Designed specifically for couples seeking a blend of high-end aesthetics, quiet seclusion, and indulgent relaxation.\n\nStep out onto your private balcony terrace to experience your very own private heated jacuzzi, framed by lush tropical foliage and ambient starlight. Inside, enjoy a thoughtfully appointed 1BHK featuring bespoke designer furnishings, a king-size plush bed, a dedicated 300 Mbps workspace, and an open-concept living lounge.\n\nWhether you are savoring morning espresso on the private patio, working seamlessly remotely, or taking an evening stroll down to the golden sands of Candolim Beach, this stay delivers an unforgettable luxury getaway.",
+    "Welcome to Mirashya UG10, an exquisite boutique sanctuary nestled in the serene coastal haven of Candolim, North Goa. Designed specifically for couples seeking a blend of high-end aesthetics, quiet seclusion, and indulgent relaxation.\n\nStep out onto your private balcony terrace to experience your very own private heated jacuzzi, framed by lush tropical foliage and ambient starlight. Inside, enjoy a thoughtfully appointed 1BHK featuring bespoke designer furnishings, a king-size plush bed, a dedicated 300 Mbps workspace, and an open-concept living lounge.\n\nWhether you are savoring morning espresso on the private patio, working seamlessly remotely, or taking an evening stroll down to the golden sands of Candolim Beach, this stay delivers an unforgettable luxury getaway.",
 
   amenities: [
     {
