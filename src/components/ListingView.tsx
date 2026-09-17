@@ -395,9 +395,8 @@ export const ListingView: React.FC<ListingViewProps> = ({
             <div className="pb-6 border-b border-zinc-200 space-y-3">
               <h3 className="text-xl font-semibold text-zinc-900">About this space</h3>
               <div
-                className={`text-zinc-700 leading-relaxed space-y-3 text-base ${
-                  !isDescriptionExpanded ? 'line-clamp-4' : ''
-                }`}
+                className={`text-zinc-700 leading-relaxed space-y-3 text-base ${!isDescriptionExpanded ? 'line-clamp-4' : ''
+                  }`}
               >
                 {listing.description.split('\n\n').map((paragraph, idx) => (
                   <p key={idx}>{paragraph}</p>
@@ -542,13 +541,12 @@ export const ListingView: React.FC<ListingViewProps> = ({
                       <button
                         key={day}
                         onClick={() => handleDateClick(day)}
-                        className={`h-9 w-full rounded-full text-xs font-medium transition-all flex items-center justify-center ${
-                          selected
+                        className={`h-9 w-full rounded-full text-xs font-medium transition-all flex items-center justify-center ${selected
                             ? 'bg-zinc-900 text-white font-bold shadow-sm'
                             : inRange
-                            ? 'bg-zinc-100 text-zinc-900 rounded-none'
-                            : 'hover:bg-zinc-100 text-zinc-800'
-                        }`}
+                              ? 'bg-zinc-100 text-zinc-900 rounded-none'
+                              : 'hover:bg-zinc-100 text-zinc-800'
+                          }`}
                       >
                         {day}
                       </button>
@@ -716,11 +714,10 @@ export const ListingView: React.FC<ListingViewProps> = ({
                     <button
                       type="button"
                       onClick={() => setIsDiscountApplied(!isDiscountApplied)}
-                      className={`text-xs font-semibold px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
-                        isDiscountApplied
+                      className={`text-xs font-semibold px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${isDiscountApplied
                           ? 'bg-emerald-600 text-white'
                           : 'bg-[#E51D53] hover:bg-[#D70466] text-white shadow-xs'
-                      }`}
+                        }`}
                     >
                       {isDiscountApplied ? 'Claimed' : 'Claim'}
                     </button>

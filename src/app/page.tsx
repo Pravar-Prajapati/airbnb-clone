@@ -106,7 +106,7 @@ export default function ListingPage() {
           title={listingData.title}
           photos={listingData.photos}
           onClose={() => setViewState({ type: 'main' })}
-          onSelectPhoto={(photoIndex) => setViewState({ type: 'lightbox', photoIndex })}
+          onSelectPhoto={(photoIndex) => openLightbox(photoIndex, 'tour')}
         />
       )}
 
@@ -114,8 +114,8 @@ export default function ListingPage() {
         <LightboxModal
           photos={listingData.photos}
           photoIndex={viewState.photoIndex}
-          onClose={() => setViewState({ type: 'tour' })}
-          onNavigate={(photoIndex) => setViewState({ type: 'lightbox', photoIndex })}
+          onClose={closeLightbox}
+          onNavigate={navigateLightbox}
         />
       )}
     </div>

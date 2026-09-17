@@ -9,8 +9,6 @@ import {
   MessageSquare,
   MapPin,
   Tag,
-  Sparkles,
-  Search,
 } from 'lucide-react';
 
 export interface UserReview {
