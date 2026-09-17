@@ -92,8 +92,8 @@ export default function ListingPage() {
                   <a href="#" className="hover:underline">Company details</a>
                 </div>
                 <div className="flex items-center gap-4 font-semibold text-zinc-800">
-                  <span>English (US)</span>
-                  <span>$ USD</span>
+                  <span>English (IN)</span>
+                  <span>₹INR</span>
                 </div>
               </div>
             </div>
